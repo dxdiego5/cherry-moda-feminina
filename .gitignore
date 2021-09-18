@@ -1,0 +1,9 @@
+node_modules
+dist
+.vscode
+.env
+docker-compose.yaml
+ormconfig.json
+yarn-error.json
+package-lock.json
+yarn.lock
