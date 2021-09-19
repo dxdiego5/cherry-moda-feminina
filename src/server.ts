@@ -3,6 +3,8 @@ import app from './app';
 import { NextFunction, Request, Response } from 'express';
 import { AppError } from './config/errors/AppError';
 
+import '../src/container/index';
+
 // instance of error initialize 
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
