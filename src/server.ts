@@ -1,24 +1,30 @@
 import app from './app';
 
-// import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
+import { AppError } from './config/errors/AppError';
 
-// const bodyParser = require('body-parser');
+// instance of error initialize 
+app.use(
+    (err: Error, request: Request, response: Response, next: NextFunction) => {
+        if (err instanceof AppError) {
+            return response.status(err.statusCode).json({
+                message: err.message,
+            });
+        }
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }))
+        return response.status(500).json({
+            status: "Error",
+            message: `Internal server error - ${err.message}`,
+        });
+    },
+);
 
-// app.use((req, resp, next) => {
-//   resp.set('Access-Control-Allow-Origin', '*');
-//   next();
-// });
 
-
+// start server
 app.listen(process.env.PORT_SERVER_LISTEN, () => {
-    console.log("--------------------------------------------------------");
-    console.log('START SERVER............');
-    console.log("SERVER PORT", process.env.PORT_SERVER_LISTEN, ".......");
-    console.log('RUNNING.................');
+    console.log("--------------------------");
+    console.log('.. START SERVER ...........');
+    console.log(".. SERVER PORT", process.env.PORT_SERVER_LISTEN, ".......");
+    console.log('.. RUNNING ................');
+    console.log("---------------------------");
 });
-
-
-
