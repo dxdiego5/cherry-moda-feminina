@@ -13,6 +13,16 @@ class ClientRepository implements IClientRepository {
     }
 
     /**
+     * searching client exits register with cpf or email
+     */
+    async findByClientExists({ email, cpf }): Promise<Client[]> {
+        const client = await this.repository.find({
+            where: [{ email: email }, { cpf: cpf }],
+        });
+        return client;
+    }
+
+    /**
      * list all clients
      */
     async listAllClient(): Promise<Client[]> {

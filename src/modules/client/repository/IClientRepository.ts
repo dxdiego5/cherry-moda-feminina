@@ -4,6 +4,7 @@ import { ICreateClientDTO } from "../DTOs/ICreateClientDTO";
 interface IClientRepository {
     createAndSave({ name, tel, email, cpf, address }: ICreateClientDTO): Promise<void>;
     listAllClient(): Promise<Client[]>;
+    findByClientExists({ email, cpf }): Promise<Client[]>;
 }
 
 

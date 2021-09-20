@@ -3,6 +3,9 @@
  */
 require('dotenv/config');
 
+import 'express-async-errors';
+import 'express-async-error';
+
 import "../database/infra/typeorm/src/index"
 
 import routes from "../src/routes/index.routes";

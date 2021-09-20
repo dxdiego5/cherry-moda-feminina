@@ -88,7 +88,7 @@ createConnection().then(async connection => {
     client.name = faker.name.firstName();
     client.tel = faker.phone.phoneNumber();
     client.email = faker.internet.email();
-    client.cpf = faker.random.number().toString();
+    client.cpf = "39988513054";
     client.address = faker.address.streetAddress();
     client.status = 1;
 
