@@ -16,11 +16,7 @@ class CreateAndSaveClientService {
     async execute({ name, email, tel, address, cpf }: ICreateClientDTO): Promise<void> {
 
         // valid CPF reality exists
-        const valid = validate(cpf);
-
-        console.log(valid);
-
-        if (!cpf) {
+        if (!validate(cpf)) {
             throw new AppError("CPF é invalido !", 401);
         } else {
             cpf = await ValidateCPF(cpf); //cleaning cpf for saved

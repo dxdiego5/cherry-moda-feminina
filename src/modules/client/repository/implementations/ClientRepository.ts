@@ -12,6 +12,21 @@ class ClientRepository implements IClientRepository {
         this.repository = getRepository(Client);
     }
 
+
+    /**
+     * find client by ID
+     */
+    async findByClientId(id:string): Promise<Client> {
+        return await this.repository.findOne(id);
+    }
+
+    /**
+     * Update client
+     */
+    async update(client: Client): Promise<Client> {
+        return await this.repository.save(client);
+    }
+
     /**
      * searching client exits register with cpf or email
      */
