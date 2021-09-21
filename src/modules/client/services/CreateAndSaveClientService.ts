@@ -1,9 +1,9 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../config/errors/AppError";
 import { ValidateCPF } from "../../../config/functions/ValidateCPF";
-import { ICreateClientDTO } from "../DTOs/ICreateClientDTO";
+import { ICreateClientDTO } from "../../DTOs/ICreateClientDTO";
 import { IClientRepository } from "../repository/IClientRepository";
-
+import { validate } from 'gerador-validador-cpf'
 
 @injectable()
 class CreateAndSaveClientService {
@@ -16,15 +16,15 @@ class CreateAndSaveClientService {
     async execute({ name, email, tel, address, cpf }: ICreateClientDTO): Promise<void> {
 
         // valid CPF reality exists
-        const validCPF = await ValidateCPF(cpf);
+        const valid = validate(cpf);
 
-        if (validCPF === false) {
+        console.log(valid);
+
+        if (!cpf) {
             throw new AppError("CPF é invalido !", 401);
         } else {
-            cpf = validCPF;
+            cpf = await ValidateCPF(cpf); //cleaning cpf for saved
         }
-
-
 
         // validate client exists
         const clientExists = await this.clientRepository.findByClientExists({ email, cpf });
