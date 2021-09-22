@@ -1,5 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../config/errors/AppError";
+import messageClient from "../../../config/messages/messageClient";
 import { IClientRepository } from "../repository/IClientRepository";
 
 
@@ -17,7 +18,7 @@ class UpdateClientService {
         const client = await this.clientRepository.findByClientId(id);
 
         if (!client) {
-            throw new AppError("Cliente náo existe !", 401);
+            throw new AppError(messageClient().ERROR.clientNotExists["message"], 401);
         }
 
         client.name = name;
@@ -30,7 +31,5 @@ class UpdateClientService {
     }
 
 }
-
-
 
 export { UpdateClientService }

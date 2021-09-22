@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
+import messageClient from "../../../config/messages/messageClient";
 import { CreateAndSaveClientService } from "./CreateAndSaveClientService";
 
 
@@ -12,7 +13,7 @@ class CreateAndSaveClientController {
         const createAndSaveClientService = container.resolve(CreateAndSaveClientService);
         await createAndSaveClientService.execute({ name, email, cpf, address, tel });
 
-        return res.status(201).send({ message: "Cliente registrado com sucesso !" });
+        return res.status(201).send(messageClient().SUCCESS.create);
     }
 
 

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
+import messageClient from "../../../config/messages/messageClient";
 import { UpdateClientService } from "./UpdateClientService";
 
 class UpdateClientController {
@@ -11,7 +12,7 @@ class UpdateClientController {
         const updateClientService = container.resolve(UpdateClientService);
         await updateClientService.execute({ id, name, email, address, tel, status });
 
-        return res.status(201).send({ message: "Cliente atualizado com sucesso !" });
+        return res.status(201).send(messageClient().SUCCESS.update);
     }
 }
 

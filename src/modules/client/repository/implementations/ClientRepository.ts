@@ -12,7 +12,6 @@ class ClientRepository implements IClientRepository {
         this.repository = getRepository(Client);
     }
 
-
     /**
      * find client by ID
      */

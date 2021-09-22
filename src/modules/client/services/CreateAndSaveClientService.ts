@@ -4,6 +4,7 @@ import { ValidateCPF } from "../../../config/functions/ValidateCPF";
 import { ICreateClientDTO } from "../../DTOs/ICreateClientDTO";
 import { IClientRepository } from "../repository/IClientRepository";
 import { validate } from 'gerador-validador-cpf'
+import messageClient from "../../../config/messages/messageClient";
 
 @injectable()
 class CreateAndSaveClientService {
@@ -17,7 +18,7 @@ class CreateAndSaveClientService {
 
         // valid CPF reality exists
         if (!validate(cpf)) {
-            throw new AppError("CPF é invalido !", 401);
+            throw new AppError(messageClient().ERROR.cpfIvalid["message"], 401);
         } else {
             cpf = await ValidateCPF(cpf); //cleaning cpf for saved
         }
@@ -25,7 +26,7 @@ class CreateAndSaveClientService {
         // validate client exists
         const clientExists = await this.clientRepository.findByClientExists({ email, cpf });
         if (clientExists.length > 0) {
-            throw new AppError("Cliente já possui cadastro !", 401);
+            throw new AppError(messageClient().ALERT.clientExists["message"], 401);
         }
 
         return await this.clientRepository.createAndSave({ name, tel, email, cpf, address });
