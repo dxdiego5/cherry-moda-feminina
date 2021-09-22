@@ -1,6 +1,8 @@
 
 export default function messageClient() {
 
+
+
     const SUCCESS = {
         create!: {
             message: "Cliente registrada com sucesso !",
@@ -9,6 +11,9 @@ export default function messageClient() {
             message: "Cliente atualizada com sucesso !",
         }
     }
+
+
+
 
     const ERROR = {
         create!: {
@@ -25,12 +30,18 @@ export default function messageClient() {
         }
     }
 
+
+
+
+
     const ALERT = {
         clientExists!: {
             message: "Cliente já possui registro !",
         }
     }
 
+
+    
     return { SUCCESS, ERROR, ALERT };
 
 }

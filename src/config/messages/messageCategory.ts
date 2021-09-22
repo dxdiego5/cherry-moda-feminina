@@ -1,6 +1,8 @@
 
 export default function messageCategory() {
 
+
+
     const SUCCESS = {
         create!: {
             message: "Categoria registrada com sucesso !",
@@ -9,6 +11,9 @@ export default function messageCategory() {
             message: "Categoria atualizada com sucesso !",
         }
     }
+
+
+
 
     const ERROR = {
         create!: {
@@ -19,11 +24,17 @@ export default function messageCategory() {
         }
     }
 
+
+
+
     const ALERT = {
         create!: {
             message: "Categoria já possui registro !",
         }
     }
+
+
+    
 
     return { SUCCESS, ERROR, ALERT };
 
