@@ -2,9 +2,9 @@
 import { container } from "tsyringe";
 import { ICategoryRepository } from "../modules/category/repository/ICategoryRepository";
 import { CategoryRepository } from "../modules/category/repository/implementations/CategoryRepository";
-import { IClientRepository } from "../modules/client/repository/IClientRepository";
-import { ClientRepository } from "../modules/client/repository/implementations/ClientRepository";
+import { ICustomerRepository } from "../modules/customer/repository/ICustomerRepository";
+import { CustomerRepository } from "../modules/customer/repository/implementations/CustomerRepository";
 
-container.registerSingleton<IClientRepository>("ClientRepository", ClientRepository);
+container.registerSingleton<ICustomerRepository>("ClientRepository", CustomerRepository);
 
 container.registerSingleton<ICategoryRepository>("CategoryRepository", CategoryRepository);

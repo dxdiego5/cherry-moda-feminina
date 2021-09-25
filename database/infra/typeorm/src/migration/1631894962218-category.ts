@@ -13,18 +13,24 @@ export class category1631894962218 implements MigrationInterface {
                         isPrimary: true,
                     },
                     {
-                        name: "name",
+                        name: "description",
                         type: "varchar",
                     },
                     {
                         name: "status",
-                        type: "integer",
-                        default: 1 // ( 1 ) Activate ( 0 ) Inactive 
+                        type: "varchar",
+                        default: "active"
                     },
                     {
                         name: 'created_at',
                         type: 'timestamp',
                         default: 'now()',
+                    },
+                    {
+                        name: 'updated_at',
+                        type: 'timestamp',
+                        default: 'now()',
+                        isNullable: true,
                     }
                 ]
             })

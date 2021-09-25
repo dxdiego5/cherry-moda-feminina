@@ -1,5 +1,5 @@
 
-export default function messageClient() {
+export default function messageCustomer() {
 
 
 
@@ -25,7 +25,7 @@ export default function messageClient() {
         cpfIvalid!: {
             message: "CPF não é valido !",
         },
-        clientNotExists!: {
+        customerNotExists!: {
             message: "Cliente não possui registro !",
         }
     }
@@ -35,13 +35,13 @@ export default function messageClient() {
 
 
     const ALERT = {
-        clientExists!: {
+        customerExists!: {
             message: "Cliente já possui registro !",
         }
     }
 
 
-    
+
     return { SUCCESS, ERROR, ALERT };
 
 }

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, JoinColumn, OneToOne } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, JoinColumn, OneToOne, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
 import { Product } from "../products/Product";
@@ -7,7 +7,8 @@ import { User } from "../users/User";
 export enum storageType {
     INPUT = "input",
     OUTPUT = "output",
-    GHOST = "ghost"
+    GHOST = "ghost",
+    SOLD_OUT = "sold_out"
 }
 
 @Entity("storages_products")
@@ -36,7 +37,9 @@ class StorageProduct {
 
     @CreateDateColumn()
     created_at: Date;
-    storageProduct: User[];
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     constructor() {
         if (!this.id) {

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
 @Entity("categorys")
@@ -8,20 +8,23 @@ class Category {
     id: string;
 
     @Column()
-    name: string;
+    description: string;
 
     @Column()
-    status: number;
+    status: string;
 
     @CreateDateColumn()
     created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
         }
         // Activate status default
-        this.status = 1
+        this.status = "active"
     }
 }
 

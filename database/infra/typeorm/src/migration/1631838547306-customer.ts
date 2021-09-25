@@ -1,12 +1,12 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class client1631838547306 implements MigrationInterface {
+export class customers1631838547306 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
 
         await queryRunner.createTable(
             new Table({
-                name: "clients",
+                name: "customers",
                 columns: [
                     {
                         name: "id",
@@ -18,7 +18,7 @@ export class client1631838547306 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "tel",
+                        name: "phone",
                         type: "varchar",
                     },
                     {
@@ -37,12 +37,22 @@ export class client1631838547306 implements MigrationInterface {
                         isNullable: true
                     },
                     {
+                        name: 'birth_date',
+                        type: 'timestamp',
+                        default: 'now()',
+                    },
+                    {
                         name: "status",
-                        type: "integer",
-                        default: 1 // ( 1 ) Activate ( 0 ) Inactive 
+                        type: "varchar",
+                        default: "active"
                     },
                     {
                         name: 'created_at',
+                        type: 'timestamp',
+                        default: 'now()',
+                    },
+                    {
+                        name: 'updated_at',
                         type: 'timestamp',
                         default: 'now()',
                     }
@@ -52,7 +62,7 @@ export class client1631838547306 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("clients");
+        await queryRunner.dropTable("customers");
     }
 
 }

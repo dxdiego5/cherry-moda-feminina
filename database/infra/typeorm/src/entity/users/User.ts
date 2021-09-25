@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
 @Entity("users")
@@ -20,17 +20,20 @@ class User {
     isAdmin: boolean;
 
     @Column()
-    status: number;
+    status: string;
 
     @CreateDateColumn()
     created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
         }
         // Activate default values for create
-        this.status = 1;
+        this.status = "active";
         this.isAdmin = true;
     }
 }

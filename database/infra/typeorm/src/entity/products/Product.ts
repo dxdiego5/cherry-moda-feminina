@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, OneToOne, JoinColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, OneToOne, JoinColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 import { Category } from "../categorys/Category";
 
@@ -9,7 +9,7 @@ class Product {
     id: string;
 
     @Column()
-    name: string;
+    product_name: string;
 
     @Column({ nullable: true })
     code!: string;
@@ -17,14 +17,23 @@ class Product {
     @Column({ nullable: true })
     bar_code!: string;
 
+    @Column({ nullable: true })
+    size!: string;
+
+    @Column({ nullable: true })
+    quantity!: number;
+
     @Column({ type: "double precision" })
-    amount: number;
+    cost: number;
+
+    @Column({ type: "double precision" })
+    price: number;
 
     @Column({ nullable: true })
     url_img!: string;
 
     @Column()
-    status: number;
+    status: string;
 
     @OneToOne(() => Category)
     @JoinColumn({ name: "id_category" })
@@ -33,12 +42,15 @@ class Product {
     @CreateDateColumn()
     created_at: Date;
 
+    @UpdateDateColumn()
+    updated_at: Date;
+
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
         }
         // Activate status default
-        this.status = 1
+        this.status = "active"
     }
 }
 

@@ -1,8 +1,8 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-@Entity("clients")
-class Client {
+@Entity("customers")
+class Customer {
 
     @PrimaryColumn()
     id: string;
@@ -11,7 +11,7 @@ class Client {
     name: string;
 
     @Column()
-    tel!: string;
+    phone!: string;
 
     @Column()
     email!: string;
@@ -23,18 +23,24 @@ class Client {
     address!: string;
 
     @Column()
-    status: number;
+    birth_date: Date;
+
+    @Column()
+    status: string;
 
     @CreateDateColumn()
     created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     constructor() {
         if (!this.id) {
             this.id = uuidV4();
         }
         // Activate status default
-        this.status = 1
+        this.status = "active"
     }
 }
 
-export { Client }
+export { Customer }
