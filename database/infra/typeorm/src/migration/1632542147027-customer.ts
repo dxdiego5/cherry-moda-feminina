@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class customers1631838547306 implements MigrationInterface {
+export class customer1632542147027 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
 
@@ -39,12 +39,10 @@ export class customers1631838547306 implements MigrationInterface {
                     {
                         name: 'birth_date',
                         type: 'timestamp',
-                        default: 'now()',
                     },
                     {
                         name: "status",
                         type: "varchar",
-                        default: "active"
                     },
                     {
                         name: 'created_at',
