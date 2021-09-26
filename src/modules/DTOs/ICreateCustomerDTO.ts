@@ -4,6 +4,7 @@ interface ICreateCustomerDTO {
     email: string;
     cpf: string;
     address: string;
+    birth_date: Date;
 }
 
 export { ICreateCustomerDTO }

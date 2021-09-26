@@ -15,11 +15,11 @@ const updateCustomerController = new UpdateCustomerController();
 // get all customers 
 customerRoutes.get("/", listCustomerController.handle);
 
-// // create and save customer
-// customerRoutes.post("/", createAndSaveCustomerController.handle);
+// create and save customer
+customerRoutes.post("/", createAndSaveCustomerController.handle);
 
- // update customer
- customerRoutes.put("/:id", updateCustomerController.handle);
+// update customer
+customerRoutes.put("/:id", updateCustomerController.handle);
 
 
 export { customerRoutes }

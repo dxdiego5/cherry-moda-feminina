@@ -6,15 +6,26 @@ import messageCustomer from "../../../config/messages/messageCustomer";
 import { ICustomerRepository } from "../repository/ICustomerRepository";
 import { ICreateCustomerDTO } from "../../DTOs/ICreateCustomerDTO";
 
+import { IDateProvider } from "../../../container/provider/DateProvider/IDateProvider";
+
 @injectable()
 class CreateAndSaveCustomerService {
 
     constructor(
         @inject("CustomerRepository")
-        private customerRepository: ICustomerRepository
+        private customerRepository: ICustomerRepository,
+
+        @inject("DayJsDateProvider")
+        private dateProvider: IDateProvider,
     ) { }
 
-    async execute({ name, email, tel, address, cpf }: ICreateCustomerDTO): Promise<void> {
+    async execute({ name, email, phone, address, cpf, birth_date }: ICreateCustomerDTO): Promise<void> {
+
+        //validate Birth date customer
+        var birth_date = new Date(birth_date);
+        if (!this.dateProvider.dateIsValid(birth_date)) {
+            throw new AppError(messageCustomer().ERROR.DateOfBirthNotValid["message"], 401);
+        }
 
         // valid CPF reality exists
         if (!validate(cpf)) {
@@ -29,7 +40,8 @@ class CreateAndSaveCustomerService {
             throw new AppError(messageCustomer().ALERT.customerExists["message"], 401);
         }
 
-        return await this.customerRepository.createAndSave({ name, tel, email, cpf, address });
+        return await this.customerRepository.createAndSave({ name, phone, email, cpf, address, birth_date });
+
     }
 }
 

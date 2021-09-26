@@ -1,8 +1,8 @@
 
 
 interface ICreateCategoryDTO {
-    name: string;
-    status: number;
+    description: string;
+    status: string;
 }
 
 export { ICreateCategoryDTO }

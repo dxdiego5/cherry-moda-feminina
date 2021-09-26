@@ -8,32 +8,32 @@ class CustomerRepository implements ICustomerRepository {
     private repository: Repository<Customer>;
 
     constructor() {
-        // start repository client
+        // start repository customer
         this.repository = getRepository(Customer);
     }
 
     /**
-     * find client by ID
+     * find customer by ID
      */
     async findByCustomerId(id: string): Promise<Customer> {
         return await this.repository.findOne(id);
     }
 
     /**
-     * Update client
+     * Update customer
      */
     async update(customer: Customer): Promise<Customer> {
         return await this.repository.save(customer);
     }
 
     /**
-     * searching client exits register with cpf or email
+     * searching customer exits register with cpf or email
      */
     async findByCustomerExists({ email, cpf }): Promise<Customer[]> {
-        const client = await this.repository.find({
+        const customer = await this.repository.find({
             where: [{ email: email }, { cpf: cpf }],
         });
-        return client;
+        return customer;
     }
 
     /**
@@ -46,8 +46,8 @@ class CustomerRepository implements ICustomerRepository {
     /**
      * creating customer and then saving to database
      */
-    async createAndSave({ name, phone, email, cpf, address }: ICreateCustomerDTO): Promise<void> {
-        const customer = this.repository.create({ name, phone, email, cpf, address });
+    async createAndSave({ name, phone, email, cpf, address, birth_date }: ICreateCustomerDTO): Promise<void> {
+        const customer = this.repository.create({ name, phone, email, cpf, address, birth_date });
         await this.repository.save(customer);
     }
 }

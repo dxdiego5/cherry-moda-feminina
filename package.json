@@ -12,6 +12,7 @@
     "@abraham/reflection": "^0.8.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
+    "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-async-error": "^0.0.2",

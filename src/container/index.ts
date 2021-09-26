@@ -5,6 +5,8 @@ import { CategoryRepository } from "../modules/category/repository/implementatio
 import { ICustomerRepository } from "../modules/customer/repository/ICustomerRepository";
 import { CustomerRepository } from "../modules/customer/repository/implementations/CustomerRepository";
 
+import '../container/provider';
+
 container.registerSingleton<ICustomerRepository>("CustomerRepository", CustomerRepository);
 
 container.registerSingleton<ICategoryRepository>("CategoryRepository", CategoryRepository);

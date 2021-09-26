@@ -27,6 +27,9 @@ export default function messageCustomer() {
         },
         statusIncorrect!: {
             message: "Customer status is incorrect!"
+        },
+        DateOfBirthNotValid!: {
+            message: "Date of birth is not valid!"
         }
     }
 
