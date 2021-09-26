@@ -13,7 +13,7 @@
 
 **RULES CREATE AND SAVE CATEGORY**
     **RF**
-        🟥 `NÃO DEVE` permitir registrar a mesma descrição
+        ✅ `NÃO DEVE` permitir registrar a mesma descrição
     **RNF**
 
 --------------------------------------------------------------------------------

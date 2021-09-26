@@ -1,15 +1,17 @@
 
 export default function messageCategory() {
 
+    // Success message 
     const SUCCESS = {
         create!: {
-            message: "Categoria registrada com registered!",
+            message: "Category successfully registered!",
         },
         update!: {
             message: "Category successfully updated!",
         }
     }
 
+    // Error message
     const ERROR = {
         create!: {
             message: "Error trying to register category!",
@@ -22,9 +24,13 @@ export default function messageCategory() {
         },
         statusIncorrect!: {
             message: "Customer status is incorrect!"
+        },
+        categoryDescriptionExists!: {
+            message: "Category description already exists!"
         }
     }
 
+    // Alert message
     const ALERT = {
         create!: {
             message: "Category already has registration!",
