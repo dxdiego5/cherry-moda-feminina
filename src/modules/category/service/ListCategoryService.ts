@@ -1,7 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { ICategoryRepository } from "../repository/ICategoryRepository";
 
-
 @injectable()
 class ListCategoryService {
 
@@ -14,6 +13,5 @@ class ListCategoryService {
         return await this.categoryRepository.listAllCategory();
     }
 }
-
 
 export { ListCategoryService }

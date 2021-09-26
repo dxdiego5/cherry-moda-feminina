@@ -2,9 +2,9 @@ import { Category } from "../../../../database/infra/typeorm/src/entity/category
 
 
 interface ICategoryRepository {
-    createAndSave(name: string): Promise<void>;
+    createAndSave(description: string): Promise<void>;
     listAllCategory(): Promise<Category[]>;
-    findByClientExists(name: string): Promise<Category[]>;
+    findByCategoryExists(description: string): Promise<Category[]>;
     findByCategoryId(id: string): Promise<Category>;
     update(category: Category): Promise<Category>;
 }

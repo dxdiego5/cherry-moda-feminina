@@ -22,7 +22,7 @@ createConnection().then(async connection => {
 
         await connection.manager.save(customer);
         console.log("-PROCESS-");
-        console.log(`SAVED ${index} / 3 Customers`);
+        console.log(`SAVED ${index} / 4 Customers`);
         console.log("Saved a new customer with id: " + customer.id);
         console.log("---");
 

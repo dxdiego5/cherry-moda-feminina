@@ -11,11 +11,18 @@ class CategoryRepository implements ICategoryRepository {
         this.repository = getRepository(Category);
     }
 
+    /**
+     * Searching category exists
+     */
+    findByCategoryExists(description: string): Promise<Category[]> {
+        throw new Error("Method not implemented.");
+    }
+
 
     /**
      * Creating and save category
      */
-    async createAndSave(name: string): Promise<void> {
+    async createAndSave(description: string): Promise<void> {
         throw new Error("Method not implemented.");
     }
 
@@ -26,12 +33,6 @@ class CategoryRepository implements ICategoryRepository {
         return await this.repository.find();
     }
 
-    /**
-     * Searching category exists
-     */
-    async findByClientExists(name: string): Promise<Category[]> {
-        return await this.repository.find({ name });
-    }
 
     /**
      * Searching category in ID

@@ -1,7 +1,0 @@
-    // "seed:client": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/clients/clients.ts",
-    // "seed:category": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/categorys/categorys.products.ts",
-    // "seed:user": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/users/users.ts",
-    // "seed:product": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/products/products.ts",
-    // "seed:storage:product": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/storages/storages.products.ts"
-
-    
