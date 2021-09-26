@@ -7,10 +7,11 @@ class UpdateCustomerController {
 
     async handle(req: Request, res: Response): Promise<Response> {
 
-        const { id, name, email, address, tel, status } = req.body;
+        const { name, email, address, phone, status } = req.body;
+        const { id } = req.params;
 
         const updateCustomerService = container.resolve(UpdateCustomerService);
-        await updateCustomerService.execute({ id, name, email, address, tel, status });
+        await updateCustomerService.execute({id, name, email, address, phone, status });
 
         return res.status(201).send(messageCustomer().SUCCESS.update);
     }

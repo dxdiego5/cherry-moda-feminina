@@ -1,15 +1,9 @@
 import { Entity, Column, PrimaryColumn, CreateDateColumn, JoinColumn, OneToOne, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
-
+import { enumStorageType } from "../../../../../../src/config/enumsTypes/EnumTypeStatus";
 import { Product } from "../products/Product";
 import { User } from "../users/User";
 
-export enum enumStorageType {
-    INPUT = "input",
-    OUTPUT = "output",
-    GHOST = "ghost",
-    SOLD_OUT = "sold_out" //esgotado
-}
 
 @Entity("storages_products")
 class StorageProduct {

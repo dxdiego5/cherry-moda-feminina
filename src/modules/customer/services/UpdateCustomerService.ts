@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+import { enumStatusType } from "../../../config/enumsTypes/EnumTypeStatus";
 import { AppError } from "../../../config/errors/AppError";
 import messageCustomer from "../../../config/messages/messageCustomer";
 import { ICustomerRepository } from "../repository/ICustomerRepository";
@@ -13,7 +14,7 @@ class UpdateCustomerService {
         private customerRepository: ICustomerRepository
     ) { }
 
-    async execute({ id, name, email, address, tel, status }) {
+    async execute({ id, name, email, address, phone, status }) {
 
         const customer = await this.customerRepository.findByCustomerId(id);
 
@@ -21,11 +22,22 @@ class UpdateCustomerService {
             throw new AppError(messageCustomer().ERROR.customerNotExists["message"], 401);
         }
 
+        //check status of customer exists
+        switch (status) {
+            case enumStatusType.ACTIVE:
+                break;
+            case enumStatusType.INACTIVE:
+                break;
+            default:
+                throw new AppError(messageCustomer().ERROR.statusIncorrect["message"]);
+        }
+
         customer.name = name;
         customer.address = address;
-        customer.tel = tel;
+        customer.phone = phone;
         customer.email = email;
         customer.status = status;
+        customer.updated_at = new Date;
 
         return await this.customerRepository.update(customer);
     }

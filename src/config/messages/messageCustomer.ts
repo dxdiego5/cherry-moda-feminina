@@ -1,47 +1,44 @@
 
 export default function messageCustomer() {
 
-
-
+    //success message
     const SUCCESS = {
         create!: {
-            message: "Cliente registrada com sucesso !",
+            message: "Customer registered successfully!",
         },
         update!: {
-            message: "Cliente atualizada com sucesso !",
+            message: "Customer updated successfully!",
         }
     }
 
-
-
-
+    //error message
     const ERROR = {
         create!: {
-            message: "Erro ao tentar registrar cliente !",
+            message: "Error trying to register customer!",
         },
         update!: {
-            message: "Erro ao tentar atualizar cliente !",
+            message: "Error trying to update client!",
         },
         cpfIvalid!: {
-            message: "CPF não é valido !",
+            message: "CPF is not valid!",
         },
         customerNotExists!: {
-            message: "Cliente não possui registro !",
+            message: "Customer does not have registration!",
+        },
+        statusIncorrect!: {
+            message: "Customer status is incorrect!"
         }
     }
 
-
-
-
-
+    //alert message
     const ALERT = {
         customerExists!: {
-            message: "Cliente já possui registro !",
+            message: "Customer already has registration!",
+        },
+        customerNotFound!: {
+            message: "No customer record found!"
         }
     }
-
-
-
+    
     return { SUCCESS, ERROR, ALERT };
-
 }

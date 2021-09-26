@@ -2,7 +2,7 @@ import { Customer } from "../../../../database/infra/typeorm/src/entity/customer
 import { ICreateCustomerDTO } from "../../DTOs/ICreateCustomerDTO";
 
 interface ICustomerRepository {
-    createAndSave({ name, tel, email, cpf, address }: ICreateCustomerDTO): Promise<void>;
+    createAndSave({ name, phone, email, cpf, address }: ICreateCustomerDTO): Promise<void>;
     listAllCustomer(): Promise<Customer[]>;
     findByCustomerExists({ email, cpf }): Promise<Customer[]>;
     findByCustomerId(id: string): Promise<Customer>;
