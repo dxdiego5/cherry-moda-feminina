@@ -1,0 +1,24 @@
+{
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "postgres",
+   "password": "cherry",
+   "database": "cherry",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "database/infra/typeorm/src/entity/**/*.ts"
+   ],
+   "migrations": [
+      "database/infra/typeorm/src/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "database/infra/typeorm/src/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "database/infra/typeorm/src/entity",
+      "migrationsDir": "database/infra/typeorm/src/migration",
+      "subscribersDir": "database/infra/typeorm/src/subscriber"
+   }
+}
