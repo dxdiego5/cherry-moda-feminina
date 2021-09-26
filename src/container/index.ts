@@ -7,4 +7,5 @@ import { CustomerRepository } from "../modules/customer/repository/implementatio
 
 container.registerSingleton<ICustomerRepository>("ClientRepository", CustomerRepository);
 
-container.registerSingleton<ICategoryRepository>("CategoryRepository", CategoryRepository);
+container.registerSingleton<ICategoryRepository>("CategoryRepository", CategoryRepository);1/111
+
