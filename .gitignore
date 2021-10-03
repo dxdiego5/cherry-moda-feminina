@@ -2,6 +2,7 @@ node_modules
 dist
 .vscode
 .env
-yarn-error.json
+yarn-error.log
 package-lock.json
 yarn.lock
+img

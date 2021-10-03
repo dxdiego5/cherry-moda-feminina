@@ -35,7 +35,7 @@ class Product {
     @Column()
     status: string;
 
-    @ManyToOne(type => Category,  { eager: true })
+    @ManyToOne(type => Category, { eager: true })
     @JoinColumn()
     category: Category;
 

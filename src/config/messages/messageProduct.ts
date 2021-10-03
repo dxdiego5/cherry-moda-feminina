@@ -24,6 +24,12 @@ export default function messageProduct() {
         },
         ProductNotFound!: {
             message: "No product registration found!"
+        },
+        PriceProductInvalid!: {
+            message: "Cost value cannot be greater than sales!"
+        },
+        CategoryNotExist!: {
+            message: "Category not exists!"
         }
 
     }
@@ -38,3 +44,5 @@ export default function messageProduct() {
     return { SUCCESS, ERROR, ALERT };
 
 }
+
+export { messageProduct }

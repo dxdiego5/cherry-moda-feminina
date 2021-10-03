@@ -1,15 +1,16 @@
 
 
 interface ICreateProductDTO {
-    productName: string;
-    code: string;
-    barCode: string;
+    product_name: string;
+    code?: string;
+    bar_code?: string;
     size: string;
-    quantity: number;
+    quantity?: number;
     cost: number;
     price: number;
-    status: string;
-    idCategory: string;
+    url_img?: string;
+    status?: string;
+    category: object;
 }
 
 export { ICreateProductDTO }

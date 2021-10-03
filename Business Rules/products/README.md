@@ -11,9 +11,10 @@
 
 **RULES `CREATE` AND SAVE PRODUCT**
 **RF**
-🟥 `NÃO DEVE` permitir registrar o mesmo `product_name` ja existente
-🟥 DEVE validar `valor de custo deve ser menor do que de venda`
-🟥 DEVE poder inserir uma imagem do produto
+✅ `NÃO DEVE` permitir registrar o mesmo `product_name` ja existente
+✅ DEVE validar `valor de custo deve ser menor do que de venda`
+✅ VALIDAR se `categoria existe`
+🟥 DEVE poder inserir uma imagem do produto(OPTIONAL)
 **RNF**
 
 ---
