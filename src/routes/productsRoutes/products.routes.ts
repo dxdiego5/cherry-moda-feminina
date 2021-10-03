@@ -1,9 +1,15 @@
 import { Router, Request, Response } from 'express';
+import { ListAllProductController } from '../../modules/product/services/ListAllProductController';
 
-const productsRoutes = Router();
+const productRoutes = Router();
 
-productsRoutes.get('/', (req: Request, res: Response) => {
-    return res.status(200).send('products index list all');
-});
+/**
+ * Initialize controllers products
+ */
+const listAllProductController = new ListAllProductController();
 
-export default productsRoutes;
+
+// List all products
+productRoutes.get('/', listAllProductController.handle);
+
+export default productRoutes;

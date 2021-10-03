@@ -7,7 +7,8 @@
     "dev": "ts-node-dev --trace-warnings --unhandled-rejections=strict  --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
     "seed:customer": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/seedCustomer/SeedCustomer.ts",
-    "seed:category": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/seedCategory/SeedCategory.ts"
+    "seed:category": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/seedCategory/SeedCategory.ts",
+    "seed:product": "ts-node-dev --trace-warnings --unhandled-rejections=strict database/infra/typeorm/seed/seedProduct/SeedProduct.ts"
   },
   "dependencies": {
     "@abraham/reflection": "^0.8.0",

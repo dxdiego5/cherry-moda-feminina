@@ -27,6 +27,9 @@ export default function messageCategory() {
         },
         categoryDescriptionExists!: {
             message: "Category description already exists!"
+        },
+        categoryNotInactivated: {
+            message: "Category cannot be inactivated as you have an active product using this category!"
         }
     }
 

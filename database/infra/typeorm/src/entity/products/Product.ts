@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, OneToOne, JoinColumn, UpdateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 import { Category } from "../categorys/Category";
 
@@ -35,9 +35,9 @@ class Product {
     @Column()
     status: string;
 
-    @OneToOne(() => Category)
-    @JoinColumn({ name: "id_category" })
-    categoryId: Category;
+    @ManyToOne(type => Category,  { eager: true })
+    @JoinColumn()
+    category: Category;
 
     @CreateDateColumn()
     created_at: Date;
@@ -50,7 +50,7 @@ class Product {
             this.id = uuidV4();
         }
         // Activate status value default
-        this.status = "active"
+        this.status = "active";
     }
 }
 

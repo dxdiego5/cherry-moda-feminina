@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
+import { Product } from "../products/Product";
 
 @Entity("categorys")
 class Category {

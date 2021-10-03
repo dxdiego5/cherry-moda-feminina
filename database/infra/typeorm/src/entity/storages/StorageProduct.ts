@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, JoinColumn, OneToOne, UpdateDateColumn } from "typeorm";
+/*import { Entity, Column, PrimaryColumn, CreateDateColumn, JoinColumn, OneToOne, UpdateDateColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 import { enumStorageType } from "../../../../../../src/config/enumsTypes/EnumTypeStatus";
 import { Product } from "../products/Product";
@@ -42,4 +42,4 @@ class StorageProduct {
     }
 }
 
-export { StorageProduct }
+export { StorageProduct }*/

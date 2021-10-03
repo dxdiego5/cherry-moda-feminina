@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { CreateAndSaveCustomerController } from "../../modules/customer/services/CreateAndSaveCustomerController";
-import { ListCustomerController } from "../../modules/customer/services/ListCustomerController";
-import { UpdateCustomerController } from "../../modules/customer/services/UpdateCustomerController";
+import { CreateAndSaveCustomerController } from "../../modules/customer/service/CreateAndSaveCustomerController";
+import { ListCustomerController } from "../../modules/customer/service/ListCustomerController";
+import { UpdateCustomerController } from "../../modules/customer/service/UpdateCustomerController";
 
 const customerRoutes = Router();
 
