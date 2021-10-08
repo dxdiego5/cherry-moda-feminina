@@ -11,6 +11,10 @@ class ProductRepository implements IProductRepository {
         this.repository = getRepository(Product);
     }
 
+    async update(product: Product): Promise<Product> {
+        return await this.repository.save(product);
+    }
+
     // find product ID
     async findProductId(id: string): Promise<Product> {
         return await this.repository.findOne(id);

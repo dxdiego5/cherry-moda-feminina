@@ -1,4 +1,5 @@
 interface ICreateProductDTO {
+    id?: string;
     product_name: string;
     code?: string;
     bar_code?: string;

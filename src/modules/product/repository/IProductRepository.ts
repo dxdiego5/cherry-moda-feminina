@@ -5,6 +5,7 @@ interface IProductRepository {
     listAllProduct(): Promise<Product[]>;
     findRelationCategoryId(id: string): Promise<Product[]>;
     findProductId(id: string): Promise<Product>;
+    update(product: Product): Promise<Product>;
     findProductName(product_name: string): Promise<Product>;
     createAndSave({
         product_name,

@@ -26,6 +26,13 @@ class UpdateProductService {
         status,
         category,
     }) {
+        // verify cost superior tha price
+        if (cost >= price) {
+            throw new AppError(
+                messageProduct().ERROR.PriceProductInvalid['message']
+            );
+        }
+
         // verify exist product
         const product = await this.productRepository.findProductId(id);
         if (!product) {
@@ -51,6 +58,28 @@ class UpdateProductService {
                     messageProduct().ERROR.statusIncorrect['message']
                 );
         }
+
+        // verify category exists
+        const categoryExists = await this.categoryRepository.findByCategoryId(
+            category.id
+        );
+        if (!categoryExists) {
+            throw new AppError(
+                messageProduct().ERROR.CategoryNotExist['message']
+            );
+        }
+
+        product.product_name = product_name;
+        product.code = code;
+        product.bar_code = bar_code;
+        product.size = size;
+        product.cost = cost;
+        product.price = price;
+        product.url_img = url_img;
+        product.status = status;
+        product.category = category.id;
+        product.updated_at = new Date();
+        return await this.productRepository.update(product);
     }
 }
 

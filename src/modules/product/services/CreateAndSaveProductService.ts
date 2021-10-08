@@ -40,6 +40,9 @@ class CreateAndSaveProductService {
             );
         }
 
+        /* Default value in stock initialize 0 */
+        quantity = 0;
+
         // verify category exists
         const categoryExists = await this.categoryRepository.findByCategoryId(
             category.id
