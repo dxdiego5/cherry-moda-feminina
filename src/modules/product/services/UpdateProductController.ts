@@ -1,32 +1,31 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import messageProduct from '../../../config/messages/messageProduct';
-import { CreateAndSaveProductService } from './CreateAndSaveProductService';
+import { ICreateProductDTO } from '../../DTOs/ICreateProductDTO';
+import { UpdateProductService } from './UpdateProductService';
 
-class CreateAndSaveProductController {
+class UpdateProductController {
     async handle(req: Request, res: Response) {
+        const { id } = req.params;
         const {
             product_name,
             code,
             bar_code,
             size,
-            quantity,
             cost,
             price,
             url_img,
             status,
             category,
-        } = req.body;
+        }: ICreateProductDTO = req.body;
 
-        const createAndSaveProductService = container.resolve(
-            CreateAndSaveProductService
-        );
-        const product = await createAndSaveProductService.execute({
+        const updateProductService = container.resolve(UpdateProductService);
+        const product = await updateProductService.execute({
+            id,
             product_name,
             code,
             bar_code,
             size,
-            quantity,
             cost,
             price,
             url_img,
@@ -34,8 +33,8 @@ class CreateAndSaveProductController {
             category,
         });
 
-        return res.status(201).json(messageProduct().SUCCESS.create);
+        return res.status(201).json(messageProduct().SUCCESS.update);
     }
 }
 
-export { CreateAndSaveProductController };
+export { UpdateProductController };

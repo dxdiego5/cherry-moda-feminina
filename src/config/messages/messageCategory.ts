@@ -1,48 +1,46 @@
-
 export default function messageCategory() {
-
-    // Success message 
+    // Success message
     const SUCCESS = {
-        create!: {
-            message: "Category successfully registered!",
+        create: {
+            message: 'Category successfully registered!',
         },
-        update!: {
-            message: "Category successfully updated!",
-        }
-    }
+        update: {
+            message: 'Category successfully updated!',
+        },
+    };
 
     // Error message
     const ERROR = {
-        create!: {
-            message: "Error trying to register category!",
+        create: {
+            message: 'Error trying to register category!',
         },
-        update!: {
-            message: "Error trying to update category!",
+        update: {
+            message: 'Error trying to update category!',
         },
-        categoryNotExists!: {
-            message: "Category not found!",
+        categoryNotExists: {
+            message: 'Category not found!',
         },
-        statusIncorrect!: {
-            message: "Customer status is incorrect!"
+        statusIncorrect: {
+            message: 'Customer status is incorrect!',
         },
-        categoryDescriptionExists!: {
-            message: "Category description already exists!"
+        categoryDescriptionExists: {
+            message: 'Category description already exists!',
         },
         categoryNotInactivated: {
-            message: "Category cannot be inactivated as you have an active product using this category!"
-        }
-    }
+            message:
+                'Category cannot be inactivated as you have an active product using this category!',
+        },
+    };
 
     // Alert message
     const ALERT = {
-        create!: {
-            message: "Category already has registration!",
+        create: {
+            message: 'Category already has registration!',
         },
-        categoryNotFound!: {
-            message: "No category record found!",
-        }
-    }
+        categoryNotFound: {
+            message: 'No category record found!',
+        },
+    };
 
     return { SUCCESS, ERROR, ALERT };
-
 }

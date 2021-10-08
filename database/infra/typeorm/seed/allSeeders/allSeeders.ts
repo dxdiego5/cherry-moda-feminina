@@ -28,7 +28,7 @@
 //     console.log("---");
 
 //     /**
-//      * 
+//      *
 //      */
 
 //     console.log("Inserting a new CATEGORY into the database...");
@@ -42,7 +42,7 @@
 //     console.log("---");
 
 //     /**
-//      * 
+//      *
 //      */
 
 //     console.log("Inserting a new PRODUCT into the database...");
@@ -61,7 +61,7 @@
 //     console.log("---");
 //     console.log("---");
 //     /**
-//      * 
+//      *
 //      */
 
 //     console.log("Inserting a new STORAGE PRODUCT into the database...");
@@ -80,7 +80,7 @@
 //     console.log("---");
 //     console.log("---");
 //     /**
-//      * 
+//      *
 //      */
 
 //     console.log("Inserting a new CLIENT into the database...");

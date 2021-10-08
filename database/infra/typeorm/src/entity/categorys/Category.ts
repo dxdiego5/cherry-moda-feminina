@@ -1,10 +1,15 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
-import { v4 as uuidV4 } from "uuid";
-import { Product } from "../products/Product";
+import {
+    Entity,
+    Column,
+    PrimaryColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+    ManyToOne,
+} from 'typeorm';
+import { v4 as uuidV4 } from 'uuid';
 
-@Entity("categorys")
+@Entity('categorys')
 class Category {
-
     @PrimaryColumn()
     id: string;
 
@@ -25,8 +30,8 @@ class Category {
             this.id = uuidV4();
         }
         // Activate status default
-        this.status = "active"
+        this.status = 'active';
     }
 }
 
-export { Category }
+export { Category };

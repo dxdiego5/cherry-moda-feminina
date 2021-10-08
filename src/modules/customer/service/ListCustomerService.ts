@@ -1,13 +1,13 @@
-import { inject, injectable } from "tsyringe";
-import { Customer } from "../../../../database/infra/typeorm/src/entity/customers/Customer";
-import { ICustomerRepository } from "../repository/ICustomerRepository";
+import { inject, injectable } from 'tsyringe';
+import { Customer } from '../../../../database/infra/typeorm/src/entity/customers/Customer';
+import { ICustomerRepository } from '../repository/ICustomerRepository';
 
 @injectable()
 class ListCustomerService {
     constructor(
         @inject('CustomerRepository')
         private customerRepository: ICustomerRepository
-    ) { }
+    ) {}
 
     async execute(): Promise<Customer[]> {
         const customers = await this.customerRepository.listAllCustomer();
@@ -15,4 +15,4 @@ class ListCustomerService {
     }
 }
 
-export { ListCustomerService }
+export { ListCustomerService };

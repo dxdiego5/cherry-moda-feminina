@@ -1,10 +1,17 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from "typeorm";
-import { v4 as uuidV4 } from "uuid";
-import { Category } from "../categorys/Category";
+import {
+    Entity,
+    Column,
+    PrimaryColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+    ManyToOne,
+    JoinColumn,
+} from 'typeorm';
+import { v4 as uuidV4 } from 'uuid';
+import { Category } from '../categorys/Category';
 
-@Entity("products")
+@Entity('products')
 class Product {
-
     @PrimaryColumn()
     id: string;
 
@@ -23,10 +30,10 @@ class Product {
     @Column({ nullable: true })
     quantity!: number;
 
-    @Column({ type: "double precision" })
+    @Column({ type: 'double precision' })
     cost: number;
 
-    @Column({ type: "double precision" })
+    @Column({ type: 'double precision' })
     price: number;
 
     @Column({ nullable: true })
@@ -35,7 +42,7 @@ class Product {
     @Column()
     status: string;
 
-    @ManyToOne(type => Category, { eager: true })
+    @ManyToOne((type) => Category, { eager: true })
     @JoinColumn()
     category: Category;
 
@@ -50,8 +57,8 @@ class Product {
             this.id = uuidV4();
         }
         // Activate status value default
-        this.status = "active";
+        this.status = 'active';
     }
 }
 
-export { Product }
+export { Product };

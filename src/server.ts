@@ -15,18 +15,20 @@ app.use(
         }
 
         return response.status(500).json({
-            status: "Error",
+            status: 'Error',
             message: `Internal server error - ${err.message}`,
         });
-    },
+    }
 );
 
 // start server
 app.listen(process.env.PORT_SERVER_LISTEN, () => {
-    console.log("-----------------💀--------------------");
-    console.log("====== SERVER RUNNING PORT", process.env.PORT_SERVER_LISTEN, "=======");
-    console.log("---------------------------------------");
-    console.log("          -----P.L.A.Y-----");
+    console.log('-----------------💀--------------------');
+    console.log(
+        '====== SERVER RUNNING PORT',
+        process.env.PORT_SERVER_LISTEN,
+        '======='
+    );
+    console.log('---------------------------------------');
+    console.log('          -----P.L.A.Y-----');
 });
-
-

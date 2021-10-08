@@ -1,10 +1,8 @@
-import { getRepository, Repository } from "typeorm";
-import { Category } from "../../../../../database/infra/typeorm/src/entity/categorys/Category";
-import { ICategoryRepository } from "../ICategoryRepository";
-
+import { getRepository, Repository } from 'typeorm';
+import { Category } from '../../../../../database/infra/typeorm/src/entity/categorys/Category';
+import { ICategoryRepository } from '../ICategoryRepository';
 
 class CategoryRepository implements ICategoryRepository {
-
     private repository: Repository<Category>;
 
     constructor() {
@@ -33,7 +31,6 @@ class CategoryRepository implements ICategoryRepository {
         return await this.repository.find();
     }
 
-
     /**
      * Searching category in ID
      */
@@ -47,8 +44,6 @@ class CategoryRepository implements ICategoryRepository {
     async update(category: Category): Promise<Category> {
         return await this.repository.save(category);
     }
-
 }
 
-
-export { CategoryRepository }
+export { CategoryRepository };

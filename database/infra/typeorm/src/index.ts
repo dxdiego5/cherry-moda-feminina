@@ -1,9 +1,7 @@
-import "reflect-metadata";
-import { Connection, createConnection, getConnectionOptions } from "typeorm";
-
+import 'reflect-metadata';
+import { Connection, createConnection, getConnectionOptions } from 'typeorm';
 
 createConnection();
-
 
 // export default async (host = 'localhost'): Promise<Connection> => {
 //     const defaultOptions = await getConnectionOptions();

@@ -1,5 +1,4 @@
-import { Category } from "../../../../database/infra/typeorm/src/entity/categorys/Category";
-
+import { Category } from '../../../../database/infra/typeorm/src/entity/categorys/Category';
 
 interface ICategoryRepository {
     createAndSave(description: string): Promise<void>;
@@ -9,4 +8,4 @@ interface ICategoryRepository {
     update(category: Category): Promise<Category>;
 }
 
-export { ICategoryRepository }
+export { ICategoryRepository };

@@ -1,10 +1,9 @@
-import { getRepository, Repository } from "typeorm";
-import { Customer } from "../../../../../database/infra/typeorm/src/entity/customers/Customer";
-import { ICreateCustomerDTO } from "../../../DTOs/ICreateCustomerDTO";
-import { ICustomerRepository } from "../ICustomerRepository";
+import { getRepository, Repository } from 'typeorm';
+import { Customer } from '../../../../../database/infra/typeorm/src/entity/customers/Customer';
+import { ICreateCustomerDTO } from '../../../DTOs/ICreateCustomerDTO';
+import { ICustomerRepository } from '../ICustomerRepository';
 
 class CustomerRepository implements ICustomerRepository {
-
     private repository: Repository<Customer>;
 
     constructor() {
@@ -46,10 +45,24 @@ class CustomerRepository implements ICustomerRepository {
     /**
      * creating customer and then saving to database
      */
-    async createAndSave({ name, phone, email, cpf, address, birth_date }: ICreateCustomerDTO): Promise<void> {
-        const customer = this.repository.create({ name, phone, email, cpf, address, birth_date });
+    async createAndSave({
+        name,
+        phone,
+        email,
+        cpf,
+        address,
+        birth_date,
+    }: ICreateCustomerDTO): Promise<void> {
+        const customer = this.repository.create({
+            name,
+            phone,
+            email,
+            cpf,
+            address,
+            birth_date,
+        });
         await this.repository.save(customer);
     }
 }
 
-export { CustomerRepository }
+export { CustomerRepository };

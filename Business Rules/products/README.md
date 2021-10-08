@@ -2,9 +2,12 @@
 
 **RULES `UPDATE` PRODUCT**
 **RF**
-🟥 DEVE buscar client pelo `ID`
-🟥 DEVE chekar e validar `status` existe
+✅ DEVE buscar product pelo `ID`
+✅ DEVE chekar e validar `status` existe
 🟥 DEVE validar `valor de custo deve ser menor do que de venda`
+✅ NÃO DEVE permitir inativar status se produto ainda tiver estoque
+🟥 VALIDAR se `categoria existe`
+🟥 DEVE poder inserir uma imagem do produto(OPTIONAL)
 **RNF**
 
 ---

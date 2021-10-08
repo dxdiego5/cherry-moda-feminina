@@ -1,9 +1,14 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
-import { v4 as uuidV4 } from "uuid";
+import {
+    Entity,
+    Column,
+    PrimaryColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+} from 'typeorm';
+import { v4 as uuidV4 } from 'uuid';
 
-@Entity("customers")
+@Entity('customers')
 class Customer {
-
     @PrimaryColumn()
     id: string;
 
@@ -39,8 +44,8 @@ class Customer {
             this.id = uuidV4();
         }
         // Activate status default
-        this.status = "active"
+        this.status = 'active';
     }
 }
 
-export { Customer }
+export { Customer };

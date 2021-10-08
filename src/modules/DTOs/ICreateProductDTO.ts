@@ -1,5 +1,3 @@
-
-
 interface ICreateProductDTO {
     product_name: string;
     code?: string;
@@ -13,4 +11,4 @@ interface ICreateProductDTO {
     category: object;
 }
 
-export { ICreateProductDTO }
+export { ICreateProductDTO };

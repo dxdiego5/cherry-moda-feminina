@@ -7,4 +7,4 @@ interface ICreateCustomerDTO {
     birth_date: Date;
 }
 
-export { ICreateCustomerDTO }
+export { ICreateCustomerDTO };
