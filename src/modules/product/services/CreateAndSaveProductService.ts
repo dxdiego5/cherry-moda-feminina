@@ -1,5 +1,5 @@
 import { inject, injectable } from 'tsyringe';
-import { enumStorageType } from '../../../config/enumsTypes/EnumTypeStatus';
+import { enumStorageType } from '../../../config/enumsTypes/EnumTypeStorageProduct';
 import { AppError } from '../../../config/errors/AppError';
 import messageProduct from '../../../config/messages/messageProduct';
 import { ICategoryRepository } from '../../category/repository/ICategoryRepository';
