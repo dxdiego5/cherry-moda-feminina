@@ -46,6 +46,9 @@ class Product {
     @JoinColumn()
     category: Category;
 
+    @Column({ nullable: true })
+    storage_type: string;
+
     @CreateDateColumn()
     created_at: Date;
 

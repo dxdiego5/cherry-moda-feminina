@@ -18,6 +18,7 @@ interface IProductRepository {
         url_img,
         status,
         category,
+        storage_type,
     }: ICreateProductDTO): Promise<void>;
 }
 

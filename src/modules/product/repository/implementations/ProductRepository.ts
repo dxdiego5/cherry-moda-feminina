@@ -43,6 +43,7 @@ class ProductRepository implements IProductRepository {
         url_img,
         status,
         category,
+        storage_type,
     }: ICreateProductDTO): Promise<void> {
         const product = this.repository.create({
             product_name,
@@ -55,6 +56,7 @@ class ProductRepository implements IProductRepository {
             url_img,
             status,
             category,
+            storage_type,
         });
         await this.repository.save(product);
     }

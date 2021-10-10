@@ -1,30 +1,31 @@
-/*import { Entity, Column, PrimaryColumn, CreateDateColumn, JoinColumn, OneToOne, UpdateDateColumn } from "typeorm";
-import { v4 as uuidV4 } from "uuid";
-import { enumStorageType } from "../../../../../../src/config/enumsTypes/EnumTypeStatus";
-import { Product } from "../products/Product";
-import { User } from "../users/User";
+import {
+    Entity,
+    Column,
+    PrimaryColumn,
+    CreateDateColumn,
+    JoinColumn,
+    UpdateDateColumn,
+    ManyToOne,
+} from 'typeorm';
+import { v4 as uuidV4 } from 'uuid';
+import { Product } from '../products/Product';
+import { User } from '../users/User';
 
-
-@Entity("storages_products")
+@Entity('storages_products')
 class StorageProduct {
-
     @PrimaryColumn()
     id: string;
 
-    @OneToOne(() => Product)
-    @JoinColumn({ name: "id_product" })
-    productId: Product;
+    @ManyToOne((type) => Product, { eager: true })
+    @JoinColumn()
+    product: Product;
 
-    @OneToOne(() => User)
-    @JoinColumn({ name: "id_user" })
-    userId: User;
+    @ManyToOne((type) => User, { eager: true })
+    @JoinColumn()
+    user: User;
 
-    @Column({
-        type: "enum",
-        enum: enumStorageType,
-        default: enumStorageType.GHOST
-    })
-    storage_type: enumStorageType;
+    @Column({ nullable: true })
+    storage_type: string;
 
     @Column()
     quantity: number;
@@ -42,4 +43,4 @@ class StorageProduct {
     }
 }
 
-export { StorageProduct }*/
+export { StorageProduct };

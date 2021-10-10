@@ -10,6 +10,7 @@ interface ICreateProductDTO {
     url_img?: string;
     status?: string;
     category: object;
+    storage_type?: string;
 }
 
 export { ICreateProductDTO };
