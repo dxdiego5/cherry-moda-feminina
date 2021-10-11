@@ -1,5 +1,5 @@
 import { inject, injectable } from 'tsyringe';
-import { enumStatusType } from '../../../config/enumsTypes/EnumTypeStatus';
+import { enumStatusType } from '../../../config/enunsTypes/StatusType';
 import { AppError } from '../../../config/errors/AppError';
 import messageCustomer from '../../../config/messages/messageCustomer';
 import { ICustomerRepository } from '../repository/ICustomerRepository';

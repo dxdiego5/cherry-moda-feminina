@@ -1,5 +1,5 @@
 import { inject, injectable } from 'tsyringe';
-import { enumStorageType } from '../../../config/enumsTypes/EnumTypeStorageProduct';
+import { enumStorageType } from '../../../config/enunsTypes/StorageType';
 import { AppError } from '../../../config/errors/AppError';
 import messageProduct from '../../../config/messages/messageProduct';
 import { ICategoryRepository } from '../../category/repository/ICategoryRepository';
@@ -44,7 +44,7 @@ class CreateAndSaveProductService {
         const quantity = 0;
 
         /* Default value in input create initialize */
-        const storage_type = enumStorageType.ZERO;
+        const storage_type = enumStorageType.SOLD_OUT;
 
         // verify category exists
         const categoryExists = await this.categoryRepository.findByCategoryId(

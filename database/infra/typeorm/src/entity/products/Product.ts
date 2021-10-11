@@ -54,6 +54,7 @@ class Product {
 
     @UpdateDateColumn()
     updated_at: Date;
+    length: number;
 
     constructor() {
         if (!this.id) {

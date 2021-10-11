@@ -7,6 +7,8 @@ import { ProductRepository } from '../modules/product/repository/implementations
 import { IProductRepository } from '../modules/product/repository/IProductRepository';
 
 import '../container/provider';
+import { IStorageProduct } from '../modules/storageProduct/repository/IStorageProduct';
+import { StorageProductRepository } from '../modules/storageProduct/repository/implementations/StorageProductRepository';
 
 container.registerSingleton<ICustomerRepository>(
     'CustomerRepository',
@@ -21,4 +23,9 @@ container.registerSingleton<ICategoryRepository>(
 container.registerSingleton<IProductRepository>(
     'ProductRepository',
     ProductRepository
+);
+
+container.registerSingleton<IStorageProduct>(
+    'StorageProductRepository',
+    StorageProductRepository
 );
